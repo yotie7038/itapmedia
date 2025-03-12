@@ -212,6 +212,7 @@
 .wptb-album-one .swiper-gallery-two .swiper-wrapper {
   padding-top: 50px;
   padding-bottom: 100px;
+  padding-left: 10px;
 }
 .wptb-album-one
   .swiper-gallery-two
@@ -813,14 +814,14 @@
 }
 
 /* .wptb-credential #countdown ul li:not(:last-child)::after {
-    content: ':';
-    position: absolute;
-    top: 10%;
-    left: calc(100% - 10px);
-    font-size: 36px;
-    line-height: 36px;
-    ;
-    font-weight: var(--fw-semibold);
+  content: ':';
+  position: absolute;
+  top: 10%;
+  left: calc(100% - 10px);
+  font-size: 36px;
+  line-height: 36px;
+  ;
+  font-weight: var(--fw-semibold);
 } */
 
 @media screen and (max-width: 1199px) {
@@ -956,6 +957,7 @@
   opacity: 0;
   visibility: hidden;
   z-index: 1;
+  height: 20vh;
 }
 .wptb-map-item-list .wptb-item--inner:hover .wptb-item--holder {
   opacity: 1;
@@ -1492,20 +1494,20 @@
 }
 /* .wptb-gallery-box::before,
 .wptb-gallery-box::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    right: 0;
-    height: 300px;
-    z-index: 2;
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 300px;
+  z-index: 2;
 }
 .wptb-gallery-box::before {
-    top: 0;
-    background: linear-gradient(180deg,  rgb(19, 22, 28, 1) 0%, rgb(19, 22, 28, 0.8) 50%, rgb(19, 22, 28, 0) 100%);
+  top: 0;
+  background: linear-gradient(180deg,  rgb(19, 22, 28, 1) 0%, rgb(19, 22, 28, 0.8) 50%, rgb(19, 22, 28, 0) 100%);
 }
 .wptb-gallery-box::after {
-    bottom: 0;
-    background: linear-gradient(180deg,  rgb(19, 22, 28, 0) 0%, rgb(19, 22, 28, 0.8) 50%, rgb(19, 22, 28, 1) 100%);
+  bottom: 0;
+  background: linear-gradient(180deg,  rgb(19, 22, 28, 0) 0%, rgb(19, 22, 28, 0.8) 50%, rgb(19, 22, 28, 1) 100%);
 } */
 .wptb-about-three .wptb-item-layer-one {
   left: 0;
@@ -1660,3 +1662,114 @@ body.theme-style--olive {
   width: 100%;
   height: 400px;
 }
+
+/* Mobile Responsivenes */
+/* Base Styles for the Package List */
+.wptb-list1 {
+  height: auto; /* Allow the height to adjust dynamically */
+  padding-bottom: 40px; /* Space at the bottom */
+  margin-top: 20px; /* Space at the top */
+}
+
+/* Increase the space between each list item */
+.wptb--item {
+  margin-bottom: 25px; /* Add space between list items */
+  display: flex;
+  align-items: center;
+}
+
+/* Spacing between the icon and the text */
+.wptb-item--icon {
+  margin-right: 15px; /* Add space between icon and text */
+}
+
+/* Space above the button to prevent overlap */
+.wptb-item--button {
+  margin-top: 40px; /* Add margin to push the button further down */
+}
+
+/* Adjust button styles for responsiveness */
+.wptb-item--button .btn {
+  width: 100%; /* Full-width button on small screens */
+  padding: 15px; /* Make buttons more prominent on small screens */
+  text-align: center;
+}
+
+/* Make sure the content container doesn't overflow */
+.wptb-item--holder {
+  max-height: 1000px; /* Increased max height for more room */
+  overflow: visible; /* Allow content to flow naturally */
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+  .wptb-list1 {
+    padding-left: 15px; /* Add padding to the left */
+    padding-right: 15px; /* Add padding to the right */
+  }
+
+  /* Reduce the space between list items */
+  .wptb--item {
+    margin-bottom: 15px; /* Reduced space for mobile */
+  }
+
+  /* Reduce the space between the list and the button */
+  .wptb-item--button {
+    margin-top: 30px; /* Reduce space for mobile */
+  }
+
+  /* Adjust title size for smaller screens */
+  .wptb-item--title {
+    font-size: 22px; /* Slightly smaller title on mobile */
+  }
+
+  /* Adjust subtitle size for smaller screens */
+  .wptb-item--subtitle {
+    font-size: 16px; /* Smaller subtitle on mobile */
+  }
+
+  /* Ensure buttons don't overlap and stay centered */
+  .wptb-item--button .btn {
+    width: 100%; /* Make button full width on small screens */
+    margin-top: 20px; /* Add some space above buttons on mobile */
+  }
+}
+
+/* Extra small devices, below 480px (Phones) */
+@media (max-width: 480px) {
+  .wptb-list1 {
+    padding-left: 10px; /* Reduce left padding on smaller screens */
+    padding-right: 10px; /* Reduce right padding on smaller screens */
+  }
+
+  .wptb--item {
+    margin-bottom: 10px; /* Even smaller margin for items */
+  }
+
+  .wptb-item--title {
+    font-size: 18px; /* Make the title even smaller on small phones */
+  }
+
+  .wptb-item--subtitle {
+    font-size: 14px; /* Smaller subtitle on small phones */
+  }
+
+  /* Make sure the buttons are easily clickable */
+  .wptb-item--button .btn {
+    padding: 12px; /* Adjust button padding for small screens */
+    font-size: 16px; /* Adjust button text size */
+  }
+}
+
+/* Large Screens (Optional) */
+@media (min-width: 1200px) {
+  .wptb-list1 {
+    padding-bottom: 60px; /* More space at the bottom for larger screens */
+  }
+
+  .wptb-item--button {
+    margin-top: 50px; /* Extra space for larger screens */
+  }
+}
+
+/* ////////////////// boook now button */
