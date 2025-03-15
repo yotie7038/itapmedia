@@ -1,3 +1,4 @@
+/* Header */
 .header {
   position: fixed;
   left: 0;
@@ -35,7 +36,7 @@
 }
 
 .header.header.color-fixed .logo a.light_logo {
- display: inline-block;
+  display: inline-block;
 }
 
 .header.header.color-fixed .logo a.dark_logo {
@@ -43,12 +44,12 @@
 }
 
 /* Top Bar */
-.header .header-top{
-	position:relative;
+.header .header-top {
+  position: relative;
   max-height: 37px;
-	background-color:var(--color-black);
+  background-color: var(--color-black);
   border-bottom: 1px solid rgba(var(--color-white-rgb), 0.35);
-	transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 .header .header-top--inner {
@@ -62,7 +63,7 @@
 }
 
 .header .header_right_part .wptb-element + .wptb-element::before {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   top: 50%;
@@ -72,44 +73,44 @@
   background-color: var(--color-two);
 }
 
-.header .social-box ul{
-	position:relative;
-	margin-bottom: 0px;
-	padding: 0px;
-}
-
-.header .social-box ul li{
-	position:relative;
-	display:inline-block;
-	margin-right: 26px;
-}
-
-.header .social-box ul li a{
-	position:relative;
-	color:var(--color-white);
-	font-size: 16px;
-}
-
-.header .social-box ul li:last-child{
-	margin-right:0px;
-}
-
-.header .social-box ul li a:hover{
-	color:var(--color-one);
-  transform: translateY(-3px);
-}
-
-.header .info-list{
-	position:relative;
-	margin-bottom: 0px;
+.header .social-box ul {
+  position: relative;
+  margin-bottom: 0px;
   padding: 0px;
 }
 
-.header .info-list li{
-	position:relative;
-	display:inline-block;
-	line-height:1em;
-	margin-right: 30px;
+.header .social-box ul li {
+  position: relative;
+  display: inline-block;
+  margin-right: 26px;
+}
+
+.header .social-box ul li a {
+  position: relative;
+  color: var(--color-white);
+  font-size: 16px;
+}
+
+.header .social-box ul li:last-child {
+  margin-right: 0px;
+}
+
+.header .social-box ul li a:hover {
+  color: var(--color-one);
+  transform: translateY(-3px);
+}
+
+.header .info-list {
+  position: relative;
+  margin-bottom: 0px;
+  padding: 0px;
+}
+
+.header .info-list li {
+  position: relative;
+  display: inline-block;
+  line-height: 1em;
+  margin-right: 30px;
 }
 
 .header .info-list li + li {
@@ -117,25 +118,25 @@
   padding-left: 30px;
 }
 
-.header .info-list li a{
-	position:relative;
-	font-size: 13px;
-	color:var(--color-white);
-	padding-left: 30px;
+.header .info-list li a {
+  position: relative;
+  font-size: 13px;
+  color: var(--color-white);
+  padding-left: 30px;
 }
 
-.header .info-list li a .icon{
-	position:absolute;
-	left:0px;
-	color:var(--color-one);
+.header .info-list li a .icon {
+  position: absolute;
+  left: 0px;
+  color: var(--color-one);
 }
 
-.header .info-list li:last-child{
-	margin:0px;
+.header .info-list li:last-child {
+  margin: 0px;
 }
 
-.header .info-list li a:hover{
-  color:var(--color-one);
+.header .info-list li a:hover {
+  color: var(--color-one);
 }
 
 .header .button-box {
@@ -149,7 +150,7 @@
   font-weight: var(--fw-light);
 }
 
-/* Top Bar End */
+/* Main Navigation */
 .header .mainnav ul.main-menu {
   padding: 0px;
   margin: 0px;
@@ -187,19 +188,15 @@
   transition: var(--transition-base);
 }
 
+/* Main Menu Links - Active and Hover States */
 .header .mainnav ul.main-menu > li.active > a,
 .header .mainnav ul.main-menu > li > a:hover {
   color: rgba(var(--color-white-rgb), 1);
 }
 
-.header .mainnav ul.main-menu li:hover > ul {
-  opacity: 1;
-  visibility: visible;
-  transform: translate3d(0px, 0px, 0px);
-}
-
-.header .mainnav ul.main-menu > li.current > a::before, .header .mainnav ul.main-menu > li.active > a::before, .header .mainnav ul.main-menu > li > a::before {
-  content: '';
+/* Underline for Main Menu Links */
+.header .mainnav ul.main-menu > li > a::before {
+  content: "";
   position: absolute;
   left: 0;
   bottom: 25px;
@@ -209,15 +206,14 @@
   transition: var(--transition-base);
 }
 
-.header.sticky .mainnav ul.main-menu > li.current > a::before, .header.sticky .mainnav ul.main-menu > li.active > a::before, .header.sticky .mainnav ul.main-menu > li > a::before {
-  bottom: 20px;
+/* Active/Current Main Menu Link Underline - Removed */
+.header .mainnav ul.main-menu > li.current > a::before,
+.header .mainnav ul.main-menu > li.active > a::before {
+  width: 0%; /* No underline when active */
+  background-color: transparent; /* Ensure no underline when active */
 }
 
-.header .mainnav ul.main-menu > li.current > a::before, .header .mainnav ul.main-menu > li.active > a::before, .header .mainnav ul.main-menu > li:hover > a::before {
-  width: 100%;
-  background-color: rgba(var(--color-white-rgb), 0.8);
-}
-
+/* Submenu Styling */
 .header .mainnav ul.main-menu li ul {
   position: absolute;
   left: 0;
@@ -229,101 +225,52 @@
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
-  z-index: 5;
-  transition: var(--transition-base);
+  z-index: 10; /* Increased z-index to ensure the submenu is above other elements */
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease;
   transform: translate3d(15px, 0px, 0px);
   background: var(--color-black);
   box-shadow: 0px 0px 40px 0px rgba(39, 61, 113, 0.1);
   max-height: calc(100vh - 100px);
+  opacity: 0; /* Initially invisible */
+  visibility: hidden; /* Initially hidden */
 }
 
-.header .mainnav ul.main-menu li ul:not(:has(.sub-menu)) {
-  overflow: auto;
+/* Submenu Hover Effect */
+.header .mainnav ul.main-menu li:hover > ul {
+  opacity: 1; /* Make visible when hovering */
+  visibility: visible; /* Make visible */
+  transform: translate3d(0px, 0px, 0px); /* Reset translate to make it appear */
 }
 
-.header .mainnav ul.main-menu li ul::-webkit-scrollbar {
-  width: 0px;
-  background: transparent;
-}
-
-.header .mainnav ul.main-menu li ul li {
-  width: 100%;
-}
-
+/* Submenu Item Styling */
 .header .mainnav ul.main-menu li ul li a {
-  padding:  10px 0px;
+  padding: 10px 0px;
   width: 100%;
   text-align: left;
-  color: rgba(var(--color-white-rgb), 0.6);
+  color: rgba(var(--color-white-rgb), 1); /* Force white color */
+  text-decoration: none; /* No underline for submenu items */
 }
 
+/* Hover and Active States for Submenu Items */
 .header .mainnav ul.main-menu li ul li.active a,
 .header .mainnav ul.main-menu li ul li a:hover {
-  color: rgba(var(--color-white-rgb), 1);
+  color: rgba(
+    var(--color-white-rgb),
+    1
+  ); /* Keep the white color on hover and active */
   font-weight: var(--fw-semibold);
 }
 
-.header .mainnav ul.main-menu li ul li:last-child > a {
-  border-bottom: none;
+/* Remove Underline for Submenu Links */
+.header .mainnav ul.main-menu li ul li a::before {
+  content: none; /* No underlining for submenu items */
 }
 
-.header .mainnav ul.main-menu li ul li.menu-item-has-children > a:after {
-  content: "\F285";
-  font-family: 'bootstrap-icons';
-  speak: none;
-  position: absolute;
-  top: 50%;
-  right: 0;
-  transform: translateY(-50%);
+.header .mainnav ul.main-menu li ul li a:hover::before {
+  width: 0; /* No underline on hover for submenu items */
 }
-
-.header .mainnav ul.main-menu li ul ul {
-  left: calc(100% + 25px);
-  top: -15px;
-  border-top: 0px solid var(--color-one);
-}
-
-.header .mainnav ul.main-menu li ul ul ul ul {
-  left: auto;
-  right: calc(100% + 26px);
-}
-
-/* .header .mainnav ul.main-menu > li > a::before {
-  content: '';
-  position: absolute;
-  left: auto;
-  right: calc(100% + 9px);
-  top: 50%;
-  width: 0px;
-  height: 1px;
-  background-color: var(--color-one);
-  transition: var(--transition-base);
-}
-
-.header .mainnav ul.main-menu > li.active > a::before,
-.header .mainnav ul.main-menu > li > a:hover::before {
-  width: 32px;
-} */
-.header .mainnav ul.main-menu > li.menu-item-has-children > a::after {
-  content: "\F282";
-  font-family: 'bootstrap-icons';
-  speak: none;
-  transition: var(--transition-base);
-  display: inline-block;
-  margin-left: 5px;
-  font-size: 10px;
-  line-height: normal;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-/* .header .mainnav ul.main-menu > li.menu-item-has-children.current > a::after, 
-.header .mainnav ul.main-menu > li.menu-item-has-children.active > a::after, 
-.header .mainnav ul.main-menu > li.menu-item-has-children:hover > a::after {
-  color: var(--color-one);
-} */
-
 
 /* Header Search */
 .header .header_search .search_form {
@@ -334,20 +281,20 @@
 
 .header .header_search .search_form .form-control {
   font-size: 16px;
-    color: var(--color-one);
-    width: 140px;
-    padding-left: 55px;
-    padding-right: 15px;
-    background-color: rgba(var(--color-one-rgb),.08);
-    border: none;
-    height: 50px;
-    border-radius: 50px;
-    -webkit-transition: all 220ms linear 0ms;
-    -khtml-transition: all 220ms linear 0ms;
-    -moz-transition: all 220ms linear 0ms;
-    -ms-transition: all 220ms linear 0ms;
-    -o-transition: all 220ms linear 0ms;
-    transition: all 220ms linear 0ms;
+  color: var(--color-one);
+  width: 140px;
+  padding-left: 55px;
+  padding-right: 15px;
+  background-color: rgba(var(--color-one-rgb), 0.08);
+  border: none;
+  height: 50px;
+  border-radius: 50px;
+  -webkit-transition: all 220ms linear 0ms;
+  -khtml-transition: all 220ms linear 0ms;
+  -moz-transition: all 220ms linear 0ms;
+  -ms-transition: all 220ms linear 0ms;
+  -o-transition: all 220ms linear 0ms;
+  transition: all 220ms linear 0ms;
 }
 
 .header .header_search .search_form .form-control:focus {
@@ -702,43 +649,45 @@
   color: rgba(var(--color-white-rgb), 0.7);
 }
 
-.mr_menu ul.main-menu li.current > a, .mr_menu ul.main-menu li.active > a, .mr_menu ul.main-menu li:hover > a {
+.mr_menu ul.main-menu li.current > a,
+.mr_menu ul.main-menu li.active > a,
+.mr_menu ul.main-menu li:hover > a {
   color: rgba(var(--color-white-rgb), 1);
 }
 
 .mr_menu ul.main-menu li a::before {
-  font-family: 'bootstrap-icons';
-  
+  font-family: "bootstrap-icons";
+
   color: var(--color-one);
 }
 
 .mr_menu ul.main-menu > li ul li a::before {
-  content: '\F63B';
+  content: "\F63B";
   font-size: 13px;
 }
 
 .mr_menu ul.main-menu > li:nth-child(1) > a::before {
-  content: '\F423';
+  content: "\F423";
 }
 
 .mr_menu ul.main-menu > li:nth-child(2) > a::before {
-  content: '\F2CD';
+  content: "\F2CD";
 }
 
 .mr_menu ul.main-menu > li:nth-child(3) > a::before {
-  content: '\F4CF';
+  content: "\F4CF";
 }
 
 .mr_menu ul.main-menu > li:nth-child(4) > a::before {
-  content: '\F38B';
+  content: "\F38B";
 }
 
 .mr_menu ul.main-menu > li:nth-child(5) > a::before {
-  content: '\F4E7';
+  content: "\F4E7";
 }
 
 .mr_menu ul.main-menu > li:nth-child(6) > a::before {
-  content: '\F4CA';
+  content: "\F4CA";
 }
 
 .mr_menu ul.main-menu li .submenu_opener {
@@ -751,7 +700,7 @@
   width: 40px;
   line-height: 52px;
   text-align: center;
-  
+
   background: transparent;
   color: var(--color-muted);
   cursor: pointer;
@@ -811,7 +760,6 @@ body.mr_menu_active .mr_menu {
   left: 0;
 }
 
-
 body.left_menu {
   padding-left: 300px;
 }
@@ -870,7 +818,7 @@ body.overlay_menu_active .overlay_menu {
 }
 
 .overlay_menu::before {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   top: 0;
@@ -969,26 +917,28 @@ body.overlay_menu_active .overlay_menu .overlay_navmenu {
   border-bottom: 1px solid rgba(var(--color-dark-seven-rgb), 0.3);
 }
 
-.overlay_menu ul.main-menu li.current > a, .overlay_menu ul.main-menu li.active > a, .overlay_menu ul.main-menu li:hover > a {
+.overlay_menu ul.main-menu li.current > a,
+.overlay_menu ul.main-menu li.active > a,
+.overlay_menu ul.main-menu li:hover > a {
   color: rgba(var(--color-white-rgb), 1);
 }
 
 .overlay_menu ul.main-menu li .submenu_opener {
   position: absolute;
-    right: 0;
-    top: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: none;
-    width: 50px;
-    height: 50px;
-    text-align: center;
-    background: transparent;
-    color: rgba(var(--color-white-rgb), 0.6);
-    font-size: 24px;
-    cursor: pointer;
-    z-index: 5;
+  right: 0;
+  top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  background: transparent;
+  color: rgba(var(--color-white-rgb), 0.6);
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 5;
 }
 
 .overlay_menu ul.main-menu li.active .submenu_opener,
@@ -1043,7 +993,6 @@ body.overlay_menu_active .wptb-overlay-contact {
   visibility: visible;
 }
 
-
 /* Overlay Menu Right Pane */
 .overlay_menu .wptb-right-pane {
   width: 100px;
@@ -1087,12 +1036,12 @@ body.overlay_menu_active .wptb-overlay-contact {
 }
 
 .header.sticky .header-top {
-	max-height: 0px;
-	opacity: 0;
+  max-height: 0px;
+  opacity: 0;
   visibility: hidden;
-	overflow: hidden;
-	padding: 0px;
-	transition: all 0.3s ease-in-out;
+  overflow: hidden;
+  padding: 0px;
+  transition: all 0.3s ease-in-out;
 }
 
 .header.sticky .logo {
@@ -1109,7 +1058,6 @@ body.overlay_menu_active .wptb-overlay-contact {
   transform: perspective(300px) rotateX(-90deg);
   transform-origin: top;
 }
-
 
 .theme-style--olive .header {
   padding-top: 45px;
@@ -1130,7 +1078,7 @@ body.overlay_menu_active .wptb-overlay-contact {
 .header.color-fixed .overlay_menu_toggle {
   color: var(--color-white-fixed);
 }
-.header.color-fixed  .mainnav ul.main-menu > li.active > a::before {
+.header.color-fixed .mainnav ul.main-menu > li.active > a::before {
   background-color: var(--color-white-fixed);
 }
 
@@ -1160,7 +1108,7 @@ body.overlay_menu_active .wptb-overlay-contact {
     position: relative;
     max-width: 180px;
   }
-  
+
   .header .logo a {
     padding: 0;
     box-shadow: none;
@@ -1188,7 +1136,6 @@ body.overlay_menu_active .wptb-overlay-contact {
     left: 0px;
   }
 
-  
   .overlay_menu {
     padding: 100px 30px 30px;
     overflow: auto;
@@ -1202,17 +1149,20 @@ body.overlay_menu_active .wptb-overlay-contact {
     line-height: 24px;
   }
 
-  .wptb-left-pane .overlay_menu_toggle, .wptb-left-pane .mr_menu_toggle {
+  .wptb-left-pane .overlay_menu_toggle,
+  .wptb-left-pane .mr_menu_toggle {
     width: 50px;
     height: 50px;
   }
-  .overlay_menu_toggle span, .mr_menu_toggle span {
+  .overlay_menu_toggle span,
+  .mr_menu_toggle span {
     width: 30px;
   }
-  .overlay_menu_toggle:hover span:nth-child(3), .mr_menu_toggle:hover span:nth-child(3), .mr_menu_toggle.close span:nth-child(3) {
+  .overlay_menu_toggle:hover span:nth-child(3),
+  .mr_menu_toggle:hover span:nth-child(3),
+  .mr_menu_toggle.close span:nth-child(3) {
     width: 30px;
   }
- 
 }
 
 @media screen and (max-width: 767.9px) {
@@ -1226,5 +1176,4 @@ body.overlay_menu_active .wptb-overlay-contact {
   .wptb-overlay-contact {
     margin-top: 50px;
   }
-  
 }

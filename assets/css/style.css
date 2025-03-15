@@ -27,7 +27,7 @@
   transform: translateX(-50%); /* Center the sub-menu horizontally */
   width: auto; /* Adjust to vw for responsiveness */
   min-width: 100%; /* Ensure the sub-menu is at least as wide as the parent */
-  padding: 20px 0;
+  padding: 20px 0px;
   background-color: #f4f4f4; /* Background color for the sub-menu */
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Shadow for the dropdown */
   z-index: 10;
@@ -60,10 +60,6 @@
   color: #007bff; /* Blue color for links */
   font-size: 14px;
   white-space: nowrap; /* Prevent the text from wrapping to the next line */
-}
-
-.sub-categories a:hover {
-  text-decoration: underline;
 }
 
 /* Make sure the sub-menu is hidden by default */
@@ -2006,5 +2002,3 @@ body.theme-style--olive {
     width: 100%;
   }
 }
-
-/* Styled Button */
