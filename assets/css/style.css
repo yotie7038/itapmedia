@@ -1,5 +1,147 @@
-/* Theme Building Customized CSS on premade components */
-/* About Company */
+/* Style for the main menu */
+.main-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Styling for each menu item */
+.menu-item {
+  position: relative;
+}
+
+.menu-item a {
+  text-decoration: none;
+  padding: 10px 20px;
+  display: block;
+}
+
+/* Hover effect for the parent menu item */
+.menu-item:hover > .sub-menu {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 equal columns on larger screens */
+  gap: 10px; /* Spacing between categories */
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%); /* Center the sub-menu horizontally */
+  width: auto; /* Adjust to vw for responsiveness */
+  min-width: 100%; /* Ensure the sub-menu is at least as wide as the parent */
+  padding: 20px 0;
+  background-color: #f4f4f4; /* Background color for the sub-menu */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Shadow for the dropdown */
+  z-index: 10;
+}
+
+/* Category styling */
+.category {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.category h3 {
+  font-size: 16px;
+  font-weight: bold;
+  color: #b30707;
+  margin-bottom: 10px;
+  white-space: nowrap; /* Prevent the text from wrapping to the next line */
+}
+
+.sub-categories {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sub-categories a {
+  text-decoration: none;
+  color: #007bff; /* Blue color for links */
+  font-size: 14px;
+  white-space: nowrap; /* Prevent the text from wrapping to the next line */
+}
+
+.sub-categories a:hover {
+  text-decoration: underline;
+}
+
+/* Make sure the sub-menu is hidden by default */
+.sub-menu {
+  display: none;
+}
+
+/* Hover state for the main menu item */
+.menu-item:hover > .sub-menu {
+  display: grid; /* Show the sub-menu when hovering */
+}
+
+/* Mobile-Friendly Adjustments */
+@media screen and (max-width: 768px) {
+  /* Adjust the sub-menu to stack vertically on smaller screens */
+  .menu-item:hover > .sub-menu {
+    display: block;
+    width: 100%; /* Make the sub-menu take full width on smaller screens */
+    flex-direction: column; /* Stack categories vertically */
+    gap: 10px; /* Reduce gap on smaller screens */
+    padding: 10px;
+    background-color: #151515; /* Ensure the background color is white */
+  }
+
+  /* Category adjustments for mobile */
+  .category {
+    align-items: flex-start;
+    padding: 0 10px; /* Add padding for better spacing on smaller screens */
+  }
+
+  .category h3 {
+    font-size: 14px; /* Make the heading smaller for mobile */
+    margin-bottom: 5px; /* Adjust margin */
+  }
+
+  .sub-categories a {
+    font-size: 12px; /* Adjust font size for mobile */
+  }
+
+  /* Make sure links in the sub-categories have more space and are easier to tap */
+  .sub-categories a {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  /* Adjust sub-menu width and grid layout for mobile */
+  .sub-menu {
+    width: 100%;
+    display: block;
+  }
+
+  .menu-item:hover > .sub-menu .category {
+    flex: 1 1 100%;
+    margin-bottom: 10px; /* Provide space between categories */
+  }
+}
+
+/* Larger screen adjustment */
+@media screen and (min-width: 769px) {
+  /* Ensure sub-menu is displayed in a grid format */
+  .menu-item:hover > .sub-menu {
+    display: grid;
+    grid-template-columns: repeat(
+      3,
+      1fr
+    ); /* 3 equal columns for larger screens */
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .category {
+    width: calc(
+      33.33% - 20px
+    ); /* Ensure each category takes up one third of the sub-menu on larger screens */
+    flex: 1 1 calc(33.33% - 20px); /* Adjust for flexibility */
+  }
+}
+
 .wptb-about-one {
   position: relative;
   overflow: hidden;
@@ -1773,3 +1915,96 @@ body.theme-style--olive {
 }
 
 /* ////////////////// boook now button */
+.wptb-item {
+  position: relative; /* Make sure the button is positioned relative to the image */
+}
+
+.wptb-item--image img {
+  width: 100%;
+  height: auto;
+}
+
+.wptb-item--button {
+  position: absolute;
+  top: 50%; /* Center the button vertically */
+  left: 50%; /* Center the button horizontally */
+  transform: translate(-50%, -50%); /* Adjust for exact center */
+  z-index: 1; /* Ensure the button is above the image */
+}
+
+.btn-two {
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.5
+  ); /* Optional: semi-transparent background */
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  font-size: 16px;
+  display: inline-block;
+  border-radius: 5px;
+}
+
+.btn-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.text-first {
+  margin-right: 8px;
+}
+
+.text-second {
+  display: flex;
+  align-items: center;
+}
+
+.bi {
+  margin-right: 5px;
+}
+
+/* CSS for Service Description for every page  */
+
+/* Add active class styles for highlighting the clicked heading */
+.menu-item.active {
+  color: white;
+}
+
+/* Initially hide all sections */
+.studio,
+.wedding,
+.newborn,
+.indoor,
+.outdoor {
+  display: none;
+}
+
+/* When a section is active, show it */
+.studio.active,
+.wedding.active,
+.newborn.active,
+.indoor.active,
+.outdoor.active {
+  display: block;
+}
+
+/* Optional - Add transition for smooth effect */
+.menu-item {
+  transition: background-color 0.3s ease;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .blog-details .row {
+    flex-direction: column;
+  }
+  .col-lg-4,
+  .col-lg-8 {
+    width: 100%;
+  }
+}
+
+/* Styled Button */

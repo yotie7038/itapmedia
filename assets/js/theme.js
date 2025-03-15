@@ -1388,3 +1388,173 @@ window.addEventListener("scroll", () => {
   }
   lastScroll = currentScroll;
 });
+
+// JS for Service Description for every page
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Define the content for each service
+  const serviceContent = {
+    studio: {
+      title: "Studio Photography",
+      content: `
+        <p>The talent at Kimono runs wide and deep. Across many markets, geographies & typologies, our team members are some of the finest professionals in the industry.</p>
+        <h4 class="widget-title">Service Steps</h4>
+        <ul class="point-order">
+          <li><i class="bi bi-check2-all"></i> Specialized studio setups for high-quality photos.</li>
+          <li><i class="bi bi-check2-all"></i> Personalized sessions based on your needs.</li>
+        </ul>
+      `,
+    },
+    wedding: {
+      title: "Wedding Photography",
+      content: `
+        <p>Our wedding photographers capture the most special moments of your big day. With a mix of candid and posed shots, we ensure every emotion is captured.</p>
+        <h4 class="widget-title">Service Steps</h4>
+        <ul class="point-order">
+          <li><i class="bi bi-check2-all"></i> Pre-wedding consultation to understand your preferences.</li>
+          <li><i class="bi bi-check2-all"></i> Candid and posed wedding day photography.</li>
+        </ul>
+      `,
+    },
+    newborn: {
+      title: "Newborn Photography",
+      content: `
+        <p>We specialize in capturing the innocence and beauty of newborns. Our photographers work in a calm and comfortable environment to ensure the best shots.</p>
+        <h4 class="widget-title">Service Steps</h4>
+        <ul class="point-order">
+          <li><i class="bi bi-check2-all"></i> Focused on the well-being and comfort of your baby.</li>
+          <li><i class="bi bi-check2-all"></i> Creating timeless portraits with delicate props.</li>
+        </ul>
+      `,
+    },
+    indoor: {
+      title: "Indoor Photography",
+      content: `
+        <p>We bring the studio to you with our indoor photography services. Whether it's for family, product, or personal portraits, we make sure everything looks perfect indoors.</p>
+        <h4 class="widget-title">Service Steps</h4>
+        <ul class="point-order">
+          <li><i class="bi bi-check2-all"></i> Professional lighting and equipment tailored to indoor settings.</li>
+          <li><i class="bi bi-check2-all"></i> Comfortable and relaxed atmosphere for great shots.</li>
+        </ul>
+      `,
+    },
+    outdoor: {
+      title: "Outdoor Photography",
+      content: `
+        <p>Outdoor photography is all about capturing the beauty of nature. Whether it's for portraits, events, or scenic landscapes, we provide a perfect setting for stunning photos.</p>
+        <h4 class="widget-title">Service Steps</h4>
+        <ul class="point-order">
+          <li><i class="bi bi-check2-all"></i> Choosing the perfect location for your shoot.</li>
+          <li><i class="bi bi-check2-all"></i> Using natural light to enhance your photos.</li>
+        </ul>
+      `,
+    },
+  };
+
+  // Function to handle navigation click
+  function showServiceDetails(serviceType) {
+    // Update the title and content based on the clicked service
+    const service = serviceContent[serviceType];
+
+    if (service) {
+      // Set the post title
+      document.getElementById("post-title").textContent = service.title;
+
+      // Set the post content
+      const contentDiv = document.getElementById("service-content");
+      contentDiv.innerHTML = service.content;
+
+      // Add the 'show' class to make the content visible
+      contentDiv.classList.add("show");
+
+      // Remove active class from all menu items
+      const menuItems = document.querySelectorAll(".menu-item");
+      menuItems.forEach((item) => item.classList.remove("active"));
+
+      // Add active class to the clicked menu item
+      const clickedItem = [...menuItems].find(
+        (item) => item.getAttribute("data-service") === serviceType
+      );
+      if (clickedItem) {
+        clickedItem.classList.add("active");
+      }
+    }
+  }
+
+  // Initially show the studio service
+  showServiceDetails("studio");
+
+  // Add click event to all menu items
+  const menuItems = document.querySelectorAll(".menu-item");
+  menuItems.forEach((item) => {
+    item.addEventListener("click", function () {
+      const serviceType = this.getAttribute("data-service");
+      showServiceDetails(serviceType);
+    });
+  });
+});
+
+// showContent Hidden
+document.addEventListener("DOMContentLoaded", function () {
+  const menuItems = document.querySelectorAll(".menu-item");
+  const allSections = document.querySelectorAll(
+    ".studio, .wedding, .newborn, .indoor, .outdoor"
+  );
+
+  menuItems.forEach((item) => {
+    item.addEventListener("click", function () {
+      const contentKey = item.getAttribute("data-content");
+
+      // Highlight the clicked item
+      menuItems.forEach((i) => i.classList.remove("active"));
+      item.classList.add("active");
+
+      // Hide all sections
+      allSections.forEach((section) => (section.style.display = "none"));
+
+      // Show the corresponding section based on the clicked item
+      const selectedSection = document.querySelector(`.${contentKey}`);
+      selectedSection.style.display = "block";
+    });
+  });
+});
+document.addEventListener("DOMContentLoaded", function () {
+  const menuItems = document.querySelectorAll(".menu-item");
+  const allSections = document.querySelectorAll(
+    ".studio, .wedding, .newborn, .indoor, .outdoor"
+  );
+
+  // Set the default section to display (Studio Photography)
+  document.querySelector(".studio").style.display = "block";
+  document.querySelector(".post-header.studio").style.display = "block";
+  document.querySelector(".fulltext.studio").style.display = "block";
+
+  menuItems.forEach((item) => {
+    item.addEventListener("click", function () {
+      const contentKey = item.getAttribute("data-content");
+
+      // Remove active class from all menu items
+      menuItems.forEach((i) => i.classList.remove("active"));
+
+      // Add active class to clicked menu item
+      item.classList.add("active");
+
+      // Hide all sections
+      allSections.forEach((section) => {
+        section.style.display = "none";
+      });
+
+      // Show the corresponding section based on clicked menu item
+      const selectedSection = document.querySelector(`.${contentKey}`);
+      const selectedHeader = document.querySelector(
+        `.post-header.${contentKey}`
+      );
+      const selectedText = document.querySelector(`.fulltext.${contentKey}`);
+
+      // Show the content, image, and title of the clicked section
+      selectedSection.style.display = "block";
+      selectedHeader.style.display = "block";
+      selectedText.style.display = "block";
+    });
+  });
+});
