@@ -1966,7 +1966,12 @@ body.theme-style--olive {
 /*--------------------------------------------------------------
 # Clients Section
 --------------------------------------------------------------*/
-.clients .clients-wrap {
+.clients {
+  margin-top: -170px;
+  margin-bottom: -170px;
+}
+
+.clients-wrap {
   border-top: 10px solid color-mix(in srgb, Red, transparent 85%);
   border-left: 10px solid color-mix(in srgb, Red, transparent 85%);
 }
