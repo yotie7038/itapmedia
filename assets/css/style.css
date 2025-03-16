@@ -1,143 +1,101 @@
-/* Style for the main menu */
-.main-menu {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-/* Styling for each menu item */
-.menu-item {
+.header_center_part .mainnav .main-menu .menu-item-has-children {
   position: relative;
 }
 
-.menu-item a {
-  text-decoration: none;
-  padding: 10px 20px;
-  display: block;
-}
-
-/* Hover effect for the parent menu item */
-.menu-item:hover > .sub-menu {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 equal columns on larger screens */
-  gap: 10px; /* Spacing between categories */
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%); /* Center the sub-menu horizontally */
-  width: auto; /* Adjust to vw for responsiveness */
-  min-width: 100%; /* Ensure the sub-menu is at least as wide as the parent */
-  padding: 20px 0px;
-  background-color: #f4f4f4; /* Background color for the sub-menu */
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Shadow for the dropdown */
-  z-index: 10;
-}
-
-/* Category styling */
-.category {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  width: 100%;
-}
-
-.category h3 {
-  font-size: 16px;
-  font-weight: bold;
-  color: #b30707;
-  margin-bottom: 10px;
-  white-space: nowrap; /* Prevent the text from wrapping to the next line */
-}
-
-.sub-categories {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.sub-categories a {
-  text-decoration: none;
-  color: #007bff; /* Blue color for links */
-  font-size: 14px;
-  white-space: nowrap; /* Prevent the text from wrapping to the next line */
-}
-
-/* Make sure the sub-menu is hidden by default */
-.sub-menu {
+.header_center_part .mainnav .main-menu .menu-item-has-children .sub-menu {
   display: none;
+  position: fixed;
+  top: /* Set this to the height of your header */ 80px; /* Example: Adjust this value */
+  left: 0;
+  width: 100vw;
+  background-color: #1a1a1a;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 9999; /* Ensure it's very high */
+  padding: 20px;
+  display: flex;
+  justify-content: space-around;
 }
 
-/* Hover state for the main menu item */
-.menu-item:hover > .sub-menu {
-  display: grid; /* Show the sub-menu when hovering */
-}
-
-/* Mobile-Friendly Adjustments */
-@media screen and (max-width: 768px) {
-  /* Adjust the sub-menu to stack vertically on smaller screens */
-  .menu-item:hover > .sub-menu {
-    display: block;
-    width: 100%; /* Make the sub-menu take full width on smaller screens */
-    flex-direction: column; /* Stack categories vertically */
-    gap: 10px; /* Reduce gap on smaller screens */
-    padding: 10px;
-    background-color: #151515; /* Ensure the background color is white */
-  }
-
-  /* Category adjustments for mobile */
-  .category {
-    align-items: flex-start;
-    padding: 0 10px; /* Add padding for better spacing on smaller screens */
-  }
-
-  .category h3 {
-    font-size: 14px; /* Make the heading smaller for mobile */
-    margin-bottom: 5px; /* Adjust margin */
-  }
-
-  .sub-categories a {
-    font-size: 12px; /* Adjust font size for mobile */
-  }
-
-  /* Make sure links in the sub-categories have more space and are easier to tap */
-  .sub-categories a {
-    padding: 10px;
-    font-size: 14px;
-  }
-
-  /* Adjust sub-menu width and grid layout for mobile */
+.header_center_part
+  .mainnav
+  .main-menu
+  .menu-item-has-children:hover
   .sub-menu {
+  display: flex;
+}
+
+.header_center_part .mainnav .main-menu .menu-item .category {
+  flex: 1;
+  padding: 10px;
+  text-align: left;
+}
+
+.header_center_part .mainnav .main-menu .menu-item .category h3 {
+  margin-bottom: 10px;
+}
+
+.header_center_part .mainnav .main-menu .menu-item .category .sub-categories a {
+  display: block;
+  padding: 5px 0;
+  text-decoration: none;
+  color: #b40606;
+  font-size: 1em;
+}
+
+.header_center_part
+  .mainnav
+  .main-menu
+  .menu-item
+  .category
+  .sub-categories
+  a:hover {
+  text-decoration: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .header_center_part .mainnav .main-menu .menu-item-has-children .sub-menu {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .header_center_part .mainnav .main-menu .menu-item .category {
     width: 100%;
-    display: block;
-  }
-
-  .menu-item:hover > .sub-menu .category {
-    flex: 1 1 100%;
-    margin-bottom: 10px; /* Provide space between categories */
   }
 }
 
-/* Larger screen adjustment */
-@media screen and (min-width: 769px) {
-  /* Ensure sub-menu is displayed in a grid format */
-  .menu-item:hover > .sub-menu {
-    display: grid;
-    grid-template-columns: repeat(
-      3,
-      1fr
-    ); /* 3 equal columns for larger screens */
-    gap: 20px;
-    padding: 20px;
-  }
-
-  .category {
-    width: calc(
-      33.33% - 20px
-    ); /* Ensure each category takes up one third of the sub-menu on larger screens */
-    flex: 1 1 calc(33.33% - 20px); /* Adjust for flexibility */
-  }
+/* Optional: Add some transition for smoother appearance */
+.header_center_part .mainnav .main-menu .menu-item-has-children .sub-menu {
+  transition: opacity 0.3s ease-in-out;
+  opacity: 0;
 }
 
+.header_center_part
+  .mainnav
+  .main-menu
+  .menu-item-has-children:hover
+  .sub-menu {
+  opacity: 1;
+}
+
+/* Optional: Styling for the main menu items */
+.header_center_part .mainnav .main-menu .menu-item a {
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #fff;
+}
+
+.header_center_part .mainnav .main-menu .menu-item a:hover {
+  color: #be0c0c;
+  background-color: #e7d9d99d;
+  border-radius: 4px;
+}
+
+.header_center_part .mainnav .main-menu .menu-item-has-children > a::after {
+  content: "\25BE";
+  margin-left: 5px;
+}
 .wptb-about-one {
   position: relative;
   overflow: hidden;

@@ -180,7 +180,7 @@
   font-weight: var(--fw-medium);
   line-height: 24px;
   text-decoration: none;
-  text-transform: uppercase;
+  text-transform: normal;
   text-align: center;
   color: rgba(var(--color-white-rgb), 0.7);
   letter-spacing: 1px;

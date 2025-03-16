@@ -1558,3 +1558,5 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+// Javascript code to allow one dropdown of sub categoeries at a time
