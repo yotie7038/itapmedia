@@ -38,7 +38,7 @@
   display: block;
   padding: 5px 0;
   text-decoration: none;
-  color: #b40606;
+  color: #fff;
   font-size: 1em;
 }
 
@@ -1959,4 +1959,41 @@ body.theme-style--olive {
   .col-lg-8 {
     width: 100%;
   }
+}
+
+/* About css of Clients pics */
+
+/*--------------------------------------------------------------
+# Clients Section
+--------------------------------------------------------------*/
+.clients .clients-wrap {
+  border-top: 10px solid color-mix(in srgb, Red, transparent 85%);
+  border-left: 10px solid color-mix(in srgb, Red, transparent 85%);
+}
+
+.clients .client-logo {
+  background-color: var(--surface-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-right: 10px solid color-mix(in srgb, Red, transparent 85%);
+  border-bottom: 10px solid color-mix(in srgb, Red, transparent 85%);
+  overflow: hidden;
+}
+
+.clients .client-logo img {
+  padding: 50px;
+  max-width: 80%;
+  transition: 0.3s;
+}
+
+@media (max-width: 640px) {
+  .clients .client-logo img {
+    padding: 30px;
+    max-width: 50%;
+  }
+}
+
+.clients .client-logo:hover img {
+  transform: scale(1.1);
 }
