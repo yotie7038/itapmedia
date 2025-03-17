@@ -1559,4 +1559,32 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-// About Clients Javascript
+// About Specific  Services before Book Now Javascript
+
+document.addEventListener("DOMContentLoaded", function () {
+  const menuItems = document.querySelectorAll(".specific-item");
+  const contentDivs = {
+    studio: document.getElementById("studio-content"),
+    wedding: document.getElementById("wedding-content"),
+    newborn: document.getElementById("newborn-content"),
+    indoor: document.getElementById("indoor-content"),
+    outdoor: document.getElementById("outdoor-content"),
+  };
+
+  function showContent(service) {
+    for (const key in contentDivs) {
+      contentDivs[key].style.display = "none";
+    }
+    contentDivs[service].style.display = "block";
+  }
+
+  menuItems.forEach((item) => {
+    item.addEventListener("click", function (e) {
+      e.preventDefault();
+      menuItems.forEach((mi) => mi.classList.remove("active"));
+      this.classList.add("active");
+      const service = this.dataset.service;
+      showContent(service);
+    });
+  });
+});

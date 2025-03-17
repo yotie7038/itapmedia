@@ -249,7 +249,7 @@
   padding: 10px 0px;
   width: 100%;
   text-align: left;
-  color: rgba(var(--color-white-rgb), 1); /* Force white color */
+  color: #ffff; /* Force white color */
   text-decoration: none; /* No underline for submenu items */
 }
 
@@ -260,7 +260,7 @@
     var(--color-white-rgb),
     1
   ); /* Keep the white color on hover and active */
-  font-weight: var(--fw-semibold);
+  font-weight: normal;
 }
 
 /* Remove Underline for Submenu Links */

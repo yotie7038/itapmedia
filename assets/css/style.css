@@ -8,12 +8,13 @@
   top: /* Set this to the height of your header */ 80px; /* Example: Adjust this value */
   left: 0;
   width: 100vw;
-  background-color: #1a1a1a;
+  background-color: #151515;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   z-index: 9999; /* Ensure it's very high */
   padding: 20px;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  border-radius: 5px;
 }
 
 .header_center_part
@@ -1921,45 +1922,6 @@ body.theme-style--olive {
 }
 
 /* CSS for Service Description for every page  */
-
-/* Add active class styles for highlighting the clicked heading */
-.menu-item.active {
-  color: white;
-}
-
-/* Initially hide all sections */
-.studio,
-.wedding,
-.newborn,
-.indoor,
-.outdoor {
-  display: none;
-}
-
-/* When a section is active, show it */
-.studio.active,
-.wedding.active,
-.newborn.active,
-.indoor.active,
-.outdoor.active {
-  display: block;
-}
-
-/* Optional - Add transition for smooth effect */
-.menu-item {
-  transition: background-color 0.3s ease;
-}
-
-/* Responsive styles */
-@media (max-width: 768px) {
-  .blog-details .row {
-    flex-direction: column;
-  }
-  .col-lg-4,
-  .col-lg-8 {
-    width: 100%;
-  }
-}
 
 /* About css of Clients pics */
 
